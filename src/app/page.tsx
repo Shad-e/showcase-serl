@@ -1,10 +1,10 @@
 "use client"; // Ensure this is the first line
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import SearchBar from './components/SearchBar'; // Adjust the path if necessary
 
 async function fetchProjects() {
-  const res = await fetch('/projects.json'); // Adjust the URL if necessary
+  const res = await fetch('http://localhost:3000/projects.json');
   if (!res.ok) {
     throw new Error('Failed to fetch projects');
   }
@@ -12,37 +12,50 @@ async function fetchProjects() {
 }
 
 export default function Home() {
-  const [projects, setProjects] = useState([]); // State to hold projects
-  const [searchQuery, setSearchQuery] = useState(''); // State to hold the search query
+  const [projects, setProjects] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredProjects, setFilteredProjects] = useState([]);
 
-  const handleSearch = (query) => {
-    setSearchQuery(query); // Update search query from SearchBar
-  };
-
-  // Fetch projects on initial mount and set up interval
   useEffect(() => {
-    const loadProjects = async () => {
-      const projectsData = await fetchProjects();
-      setProjects(projectsData);
+    const getProjects = async () => {
+      const data = await fetchProjects();
+      setProjects(data);
+      setFilteredProjects(data); // Initialize filtered projects
     };
 
-    loadProjects(); // Initial fetch
+    getProjects();
 
-    const intervalId = setInterval(loadProjects, 300000); // Reload every 30 seconds
+    // Reload projects every 5 minutes
+    const interval = setInterval(getProjects, 5 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
 
-    return () => clearInterval(intervalId); // Cleanup on unmount
-  }, []); // Empty dependency array means this runs once on mount
+  useEffect(() => {
+    const results = projects.filter((project) =>
+      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
+    setFilteredProjects(results); // Update filtered projects
+  }, [searchQuery, projects]);
 
-  // Filter projects based on the search query
-  const filteredProjects = projects.filter((project) =>
-    project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    (Array.isArray(project.tags) && project.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())))
-  );
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
 
   return (
     <div className="min-h-screen p-8">
-      <h1 className="text-2xl font-bold mb-4">ShowcaseSERL Projects</h1>
-      <SearchBar onSearch={handleSearch} /> {/* Include the SearchBar component */}
+      {/* Header Section */}
+      <header className="bg-gray-800 text-white rounded-lg p-4 mb-4 flex justify-between items-center">
+        <h1 className="text-2xl font-bold">ShowcaseSERL Projects</h1>
+        <SearchBar onSearch={handleSearch} />
+      </header>
+      
+    {/* Display the number of projects */}
+    <p className="mt-2 mb-4 text-lg text-center">
+      {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''}
+    </p>
+
+      
       {filteredProjects.length === 0 ? (
         <p>No projects available.</p>
       ) : (
@@ -74,3 +87,5 @@ export default function Home() {
     </div>
   );
 }
+
+
