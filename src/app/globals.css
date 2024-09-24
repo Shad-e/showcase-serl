@@ -30,16 +30,12 @@ body {
   justify-content: center;
 }
 
-
 .project-screenshot {
   width: 100%; /* Ensure the image takes the full width of the container */
   height: auto; /* Maintain aspect ratio */
   object-fit: cover; /* Cover the container, preserving aspect ratio */
   border-radius: 8px;
 }
-
-
-
 
 @layer utilities {
   .text-balance {
