@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import SearchBar from './components/SearchBar'; // Adjust the path if necessary
+import LoadingSpinner from './components/LoadingSpinner';
+import ProjectList from './components/ProjectList';
 
 async function fetchProjects() {
-  const res = await fetch('http://localhost:3000/projects.json');
+  const res = await fetch('/projects.json'); // Relative path to the public folder
   if (!res.ok) {
     throw new Error('Failed to fetch projects');
   }
@@ -56,10 +58,7 @@ export default function Home() {
 
       {/* Display loading spinner */}
       {loading ? (
-        <div className="flex justify-center items-center h-64">
-          <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
-          <p className="ml-2">Loading projects...</p>
-        </div>
+        <LoadingSpinner />
       ) : (
         <>
           {/* Display the number of projects */}
@@ -70,31 +69,7 @@ export default function Home() {
           {filteredProjects.length === 0 ? (
             <p>No projects available.</p>
           ) : (
-            <ul className="space-y-4">
-              {filteredProjects.map((project, index) => (
-                <li key={index} className="p-4 border rounded-lg shadow-md">
-                  <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
-                  <div className="project-screenshot-wrapper mb-2">
-                    <img
-                      src={project.screenshot}
-                      alt={`${project.title} screenshot`}
-                      className="project-screenshot"
-                    />
-                  </div>
-                  <p className="mb-2">{project.description}</p>
-                  <p className="mb-2">Type: <strong>{project.type}</strong></p>
-                  <p className="mb-2">Tags: {project.tags.join(', ')}</p>
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500 underline"
-                  >
-                    Project Link
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <ProjectList projects={filteredProjects} />
           )}
         </>
       )}
