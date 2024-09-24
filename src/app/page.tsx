@@ -89,7 +89,7 @@ export default function Home() {
                   </div>
                   <p className='mb-2'>{project.description}</p>
                   <p className='mb-2'>
-                    Type: <strong>{project.type}</strong>
+                    Type: {project.type}
                   </p>
                   <p className='mb-2'>Tags: {project.tags.join(', ')}</p>
                   <a
