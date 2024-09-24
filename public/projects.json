@@ -3,21 +3,21 @@
         "title": "CRedit Maker",
         "screenshot": "/img/credit-maker.png",
         "description": "CRedit Maker helps you to create CRediT (Contributor Roles Taxonomy) statements for your research papers.",
-        "tag": "Placeholder",
+        "tags": ["academic", "credit", "taxonomy"],
         "url": "https://github.com/andreas-bauer/credit-maker"
     },
     {
         "title": "Rejoinderoo",
         "screenshot": "/img/rejoindeero.png",
         "description": "Rejoinderoo creates a rejoinder (response to reviewers) LaTeX document based on a CSV file.",
-        "tag": "Placeholder",
+        "tags": ["academic", "csv", "latex"],
         "url": "https://github.com/andreas-bauer/rejoinderoo"     
     },
     {
         "title": "Pokédex",
         "screenshot": "/img/pokedex.png",
         "description": "Pokédex mobile application to view pokémon lists and details.",
-        "tag": "Placeholder",
+        "tags": ["pokemon", "mobile", "application"],
         "url": "https://github.com/bth-dipt-teaching/pokedex"             
     }
   ]
