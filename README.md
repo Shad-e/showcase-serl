@@ -30,13 +30,3 @@ To ensure a consistent code style, this project uses [ESLint](https://eslint.org
 npm run lint
 npm run format:fix
 ```
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
->>>>>>> 6d2375a (Initial commit for ShowcaseSERL project)
