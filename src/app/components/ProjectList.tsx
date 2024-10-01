@@ -1,8 +1,6 @@
-// src/app/components/ProjectList.tsx
-
-import React from 'react' // Import React
-import Image from 'next/image' // Import Image from next/image
-import { Project } from '../types' // Import the Project type
+import React from 'react'
+import Image from 'next/image'
+import { Project } from '../types'
 
 interface ProjectListProps {
   projects: Project[]
@@ -19,8 +17,8 @@ const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
               src={project.screenshot}
               alt={`${project.title} screenshot`}
               className='project-screenshot'
-              width={500} // Set appropriate width
-              height={300} // Set appropriate height
+              width={500}
+              height={300}
             />
           </div>
           <p className='mb-2'>{project.description}</p>
