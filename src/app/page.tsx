@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import SearchBar from './components/SearchBar'
 import { Project } from './types'
+import ProjectCard from './components/ProjectCard' // Import the ProjectCard
 
 async function fetchProjects(): Promise<Project[]> {
   const res = await fetch('http://localhost:3000/projects.json')
@@ -72,35 +72,9 @@ export default function Home() {
           {filteredProjects.length === 0 ? (
             <p>No projects available.</p>
           ) : (
-            <ul className='space-y-4'>
+            <ul className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
               {filteredProjects.map((project, index) => (
-                <li key={index} className='rounded-lg border p-4 shadow-md'>
-                  <h2 className='mb-2 text-xl font-semibold'>
-                    {project.title}
-                  </h2>
-                  <div className='project-screenshot-wrapper mb-2'>
-                    <Image
-                      src={project.screenshot}
-                      alt={`${project.title} screenshot`}
-                      className='project-screenshot'
-                      width={500}
-                      height={300}
-                    />
-                  </div>
-                  <p className='mb-2'>{project.description}</p>
-                  <p className='mb-2'>
-                    Type: {project.type}
-                  </p>
-                  <p className='mb-2'>Tags: {project.tags.join(', ')}</p>
-                  <a
-                    href={project.url}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-blue-500 underline'
-                  >
-                    Project Link
-                  </a>
-                </li>
+                <ProjectCard key={index} project={project} />
               ))}
             </ul>
           )}
