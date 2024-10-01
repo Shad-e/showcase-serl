@@ -7,4 +7,5 @@ export interface Project {
   tags: string[]
   url: string
   type: string
+  id: string
 }
