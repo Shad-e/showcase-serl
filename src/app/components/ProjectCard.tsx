@@ -1,11 +1,10 @@
-import Image from 'next/image' // Import the Image component
+import Image from 'next/image'
 import { Project } from '../types'
 
 interface ProjectCardProps {
   project: Project
 }
 
-// Handles the display of each project, including title, description, type, tags, screenshot, and link.
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <li className='rounded-lg border p-4 shadow-md'>
@@ -15,8 +14,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           src={project.screenshot}
           alt={`${project.title} screenshot`}
           className='project-screenshot'
-          width={500} // Adjust the width as needed
-          height={300} // Adjust the height as needed
+          width={500}
+          height={300}
         />
       </div>
       <p className='mb-2'>{project.description}</p>
