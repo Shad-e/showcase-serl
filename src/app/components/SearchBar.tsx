@@ -1,7 +1,6 @@
-'use client' // Ensure this is the first line
+'use client'
 
-// src/app/components/SearchBar.tsx
-import React, { useState } from 'react' // Import useState
+import React, { useState } from 'react'
 
 // Define props type for SearchBar
 interface SearchBarProps {
@@ -23,7 +22,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       placeholder='Search projects...'
       value={query}
       onChange={handleInputChange}
-      className='rounded-lg border border-gray-300 bg-gray-200 p-2 text-gray-800' // Adjust the text color
+      className='rounded-lg border border-gray-300 bg-gray-200 p-2 text-gray-800'
     />
   )
 }
