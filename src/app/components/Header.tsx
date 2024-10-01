@@ -1,5 +1,3 @@
-// src/app/components/Header.tsx
-
 import React from 'react'
 import SearchBar from './SearchBar' // Adjust the path if necessary
 
