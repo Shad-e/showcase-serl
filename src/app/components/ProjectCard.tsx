@@ -1,14 +1,14 @@
-import Image from 'next/image'
-import { Project } from '../types'
+import Image from 'next/image';
+import Link from 'next/link';
+import { Project } from '../types';
 
 interface ProjectCardProps {
-  project: Project
+  project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  // Function to truncate the description to a maximum of 100 characters
   const truncateDescription = (description: string) => {
-    return description.length > 100 ? `${description.slice(0, 105)}...` : description;
+    return description.length > 100 ? `${description.slice(0, 100)}...` : description;
   };
 
   return (
@@ -18,20 +18,23 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           src={project.screenshot}
           alt={`${project.title} screenshot`}
           className='project-screenshot'
-          width={200}  // Adjust width as needed
-          height={150} // Adjust height as needed
+          width={200}
+          height={150}
         />
       </div>
       <div className='flex-grow'>
-        <h2 className='mb-2 text-xl font-semibold'>{project.title}</h2>
-        <p className='mb-2'>{truncateDescription(project.description)}</p> {/* Truncated description */}
-        <p className='mb-2'>Type: {project.type}</p>
+        <Link href={`/${project.id}`}>
+          <h2 className='mb-2 text-xl font-semibold hover:underline'>{project.title}</h2>
+        </Link>
+        <p className='mb-2'>{truncateDescription(project.description)}</p>
+        <p className='mb-2'>
+          <span className='ml-1 inline-block rounded-full bg-gray-800 px-2 py-1 text-white text-sm'>
+            {project.type}
+          </span>
+        </p>
         <div className='mb-2'>
           {project.tags.map((tag, index) => (
-            <span
-              key={index}
-              className='mr-2 inline-block rounded-full bg-blue-500 px-3 py-1 text-white text-sm'
-            >
+            <span key={index} className='mr-2 inline-block rounded-full bg-blue-500 px-3 py-1 text-white text-sm'>
               {tag}
             </span>
           ))}
@@ -40,11 +43,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           href={project.url}
           target='_blank'
           rel='noopener noreferrer'
-          className='text-blue-500 underline'
+          className='inline-block rounded bg-blue-600 px-2 py-1 text-white font-semibold text-xs transition duration-300 ease-in-out hover:bg-blue-700'
         >
           Project Link
         </a>
       </div>
     </li>
-  )
+  );
 }
