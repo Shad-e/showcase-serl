@@ -1,9 +1,9 @@
-'use client' // Ensure this is the first line
+'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image' // Import Image from next/image
-import SearchBar from './components/SearchBar' // Adjust the path if necessary
-import { Project } from './types' // Import the Project type
+import Image from 'next/image'
+import SearchBar from './components/SearchBar'
+import { Project } from './types'
 
 async function fetchProjects(): Promise<Project[]> {
   const res = await fetch('http://localhost:3000/projects.json')
@@ -83,8 +83,8 @@ export default function Home() {
                       src={project.screenshot}
                       alt={`${project.title} screenshot`}
                       className='project-screenshot'
-                      width={500} // Specify the width of the image
-                      height={300} // Specify the height of the image
+                      width={500}
+                      height={300}
                     />
                   </div>
                   <p className='mb-2'>{project.description}</p>
