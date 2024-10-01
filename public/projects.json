@@ -1,26 +1,38 @@
 [
   {
+    "id": 1,
     "title": "CRedit Maker",
-    "screenshot": "/img/credit-maker.png",
+    "screenshot": "https://raw.githubusercontent.com/andreas-bauer/credit-maker/main/src/images/robot-logo128.png",
     "description": "CRedit Maker helps you to create CRediT (Contributor Roles Taxonomy) statements for your research papers.",
     "tags": ["academic", "credit", "taxonomy"],
     "url": "https://github.com/andreas-bauer/credit-maker",
     "type": "research"
   },
   {
+    "id": 2,
     "title": "Rejoinderoo",
-    "screenshot": "/img/rejoindeero.png",
+    "screenshot": "https://raw.githubusercontent.com/andreas-bauer/rejoinderoo/main/images/logo.png",
     "description": "Rejoinderoo creates a rejoinder (response to reviewers) LaTeX document based on a CSV file.",
     "tags": ["academic", "csv", "latex"],
     "url": "https://github.com/andreas-bauer/rejoinderoo",
     "type": "student"
   },
   {
+    "id": 3,
     "title": "Pokédex",
-    "screenshot": "/img/pokedex.png",
+    "screenshot": "https://raw.githubusercontent.com/bth-dipt-teaching/pokedex/refs/heads/main/assets/screenshots/light/1.png",
     "description": "Pokédex mobile application to view pokémon lists and details.",
     "tags": ["pokemon", "mobile", "application"],
     "url": "https://github.com/bth-dipt-teaching/pokedex",
     "type": "student"
+  },
+  {
+    "id": 4,
+    "title": "EXO",
+    "screenshot": "https://raw.githubusercontent.com/exo-explore/exo/main/docs/exo-logo-black-bg.jpg",
+    "description": "Run your own AI cluster at home with everyday devices.",
+    "tags": ["ai", "mobile", "application"],
+    "url": "https://github.com/exo-explore/exo",
+    "type": "research"
   }
 ]
