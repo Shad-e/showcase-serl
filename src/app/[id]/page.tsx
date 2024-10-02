@@ -1,5 +1,3 @@
-// src/app/[id]/page.tsx
-
 import fs from 'fs';
 import path from 'path';
 import Link from 'next/link'; // Import Link from next/link
@@ -28,8 +26,12 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
 
   return (
     <div className='min-h-screen p-8'>
-      <header className='mb-4 rounded-lg bg-gray-800 p-4 text-white'>
-        <h1 className='text-2xl font-bold'>{project.title}</h1>
+      <header className='mb-4 rounded-lg bg-gray-800 p-4 text-white text-2xl font-bold cursor-pointer hover:text-gray-400'>
+        <h1 className='text-2xl font-bold'>
+          <Link href="/">
+            {project.title}
+          </Link>
+        </h1>
       </header>
 
       <div className='flex flex-col items-center'>
@@ -47,7 +49,7 @@ const ProjectPage = ({ params }: { params: { id: string } }) => {
         >
           View Project
         </a>
-        {}
+
         <Link href="/" className='mt-4 rounded bg-gray-600 px-4 py-2 text-white hover:bg-gray-500'>
           Back to Home
         </Link>

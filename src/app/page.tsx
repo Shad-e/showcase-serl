@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Header from './components/Header' // Import the Header component
 import SearchBar from './components/SearchBar'
 import { Project } from './types'
 import ProjectCard from './components/ProjectCard' // Import the ProjectCard
@@ -52,10 +53,7 @@ export default function Home() {
 
   return (
     <div className='min-h-screen p-8'>
-      <header className='mb-4 flex items-center justify-between rounded-lg bg-gray-800 p-4 text-white'>
-        <h1 className='text-2xl font-bold'>ShowcaseSERL Projects</h1>
-        <SearchBar onSearch={handleSearch} />
-      </header>
+      <Header onSearch={handleSearch} /> {/* Use the imported Header component */}
 
       {loading ? (
         <div className='flex h-64 items-center justify-center'>
