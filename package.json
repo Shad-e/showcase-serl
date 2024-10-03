@@ -11,10 +11,11 @@
     "format:fix": "prettier --write --ignore-path .gitignore --list-different ."
   },
   "dependencies": {
-    "next": "14.2.8",
+    "next": "14.2.14",
     "qrcode.react": "^4.0.1",
-    "react": "^18",
-    "react-dom": "^18"
+    "reach": "^1.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/node": "^20",
