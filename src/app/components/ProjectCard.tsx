@@ -36,8 +36,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <span key={index} className='mr-2 inline-block rounded-full bg-blue-500 px-3 py-1 text-white text-sm'>
                 {tag}
               </span>
+              
             ))}
           </div>
+          <a 
+          href={project.url} 
+          className='mt-4 inline-block rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-500'
+          target='_blank' 
+          rel='noopener noreferrer'
+        >
+          View Project
+        </a>
         </div>
       </li>
     </Link>
