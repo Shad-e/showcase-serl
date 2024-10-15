@@ -8,7 +8,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   const truncateDescription = (description: string) => {
-    return description.length > 100 ? `${description.slice(0, 100)}...` : description;
+    return description.length > 100 ? `${description.slice(0, 80)}...` : description;
   };
 
   return (

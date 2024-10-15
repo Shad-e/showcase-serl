@@ -4,7 +4,14 @@ ShowcaseSERL is a curated collection of student and researcher- developed projec
 
 ## Getting Started
 
-First, run the development server:
+First, clone the repository to your local machine, relocate to your folder and install the npm packages required for the application:
+
+```bash
+npm install
+```
+
+
+Second, run the development server:
 
 ```bash
 npm run dev
