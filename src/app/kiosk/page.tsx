@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import ImageCycler from '../components/ImageCycle' // Import the ImageCycler component
+import QRCodeDisplay from '../components/QRCodeDisplay'; // Import the QRCodeDisplay component
 
 const Kiosk = () => {
   const [projects, setProjects] = useState<any[]>([])
@@ -27,7 +27,7 @@ const Kiosk = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length)
-    }, 10000) // Change project every 10 seconds
+    }, 5000) // Change project every 5 seconds
 
     return () => clearInterval(interval)
   }, [projects])
@@ -45,44 +45,67 @@ const Kiosk = () => {
         {line}
         <br />
       </span>
-    ));
-  };
+    ))
+  }
+
+  // Construct dynamic QR code URL
+  const qrCodeUrl = `${window.location.origin}/${project.id}`; // Dynamically construct the URL
 
   return (
-    <div className='flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500'>
-      {/* Main container with gradient background and centered content */}
-      <div className='w-full max-w-7xl p-10 bg-white rounded-lg shadow-lg'>
-        {/* Container for project details with white background, rounded corners, and shadow */}
-        <h2 className='text-4xl font-bold mb-4 text-center'>{project.title}</h2>
-        {/* Title of the project with larger font size, bold, and centered */}
-        <div className='flex flex-col lg:flex-row items-center justify-center gap-10'>
-          {/* Flex container to arrange image and info side by side on larger screens */}
+    <div className='flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500'>
+      {/* Full-screen container with centered content */}
+      <div className='relative w-full max-w-screen-2xl p-16 md:p-20 bg-white rounded-lg shadow-2xl flex flex-col' style={{ height: '85vh' }}>
+        
+        {/* Combined Title and Tags Section */}
+        <div className='text-center mb-4'>
+          <h2 className='text-5xl md:text-6xl font-bold mb-2'>{project.title}</h2>
+          <div className='flex justify-center'>
+            {project.tags.map((tag: string, index: number) => (
+              <span
+                key={index}
+                className='mr-2 mb-2 inline-block rounded-full bg-blue-500 px-3 py-1 text-white text-sm'
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className='flex flex-col lg:flex-row items-start justify-between gap-10 h-full flex-grow'>
           {/* Image Section */}
-          <div className='lg:w-1/2 w-full'>
+          <div className='lg:w-1/2 w-full h-full flex items-center justify-center'>
             {project.screenshot.length > 0 && (
-              <div className='project-screenshot-wrapper rounded-lg overflow-hidden' style={{ width: '400px', height: 'auto' }}>
-                <ImageCycler images={project.screenshot} /> {/* Use ImageCycler component here */}
+              <div className='flex space-x-4 items-start justify-center h-full'>
+                {/* Flex container to keep images side by side */}
+                {project.screenshot.map((image: string, index: number) => (
+                  <img
+                    key={index}
+                    src={image}
+                    srcSet={`${image} 1x, ${image}?raw=true 2x`} // Use srcSet for responsive images
+                    alt={`Screenshot ${index + 1}`}
+                    className='rounded-lg'
+                    style={{
+                      width: project.screenshot.length > 1 ? '400px' : '800px',
+                      height: project.screenshot.length > 1 ? 'auto' : '400px',
+                      maxHeight: '80%',
+                      objectFit: 'contain',
+                    }} 
+                  />
+                ))}
               </div>
             )}
           </div>
           {/* Project Info Section */}
-          <div className='lg:w-1/2 w-full text-black'> {/* Change text color to black for better contrast */}
-            <p className='text-xl leading-relaxed mb-6'>{renderDescription(project.description)}</p>
-            {/* Description with larger font size and relaxed line height */}
-            <p className='text-lg mb-4'>
-              <strong>Tags:</strong> {project.tags.join(', ')}
-              {/* Display project tags in a larger font size */}
+          <div className='lg:w-1/2 w-full h-full text-black flex flex-col overflow-auto'>
+            <p className='text-xl md:text-2xl leading-relaxed mb-6'>
+              {renderDescription(project.description)}
             </p>
-            <a
-              href={project.url}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-blue-600 underline text-2xl'
-            >
-              Visit Project
-              {/* Link to project with blue color, underlined, and larger font size */}
-            </a>
           </div>
+        </div>
+
+        {/* QR Code Section */}
+        <div className='absolute bottom-6 right-6'>
+          <QRCodeDisplay url={qrCodeUrl} /> {/* Use the dynamic QR code URL */}
         </div>
       </div>
     </div>

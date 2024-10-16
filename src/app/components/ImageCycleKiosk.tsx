@@ -14,18 +14,26 @@ const ImageCycler: React.FC<ImageCyclerProps> = ({ images, altText }) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 5 seconds
+    }, 10000); // Change image every 10 seconds
 
     return () => clearInterval(intervalId); // Cleanup on component unmount
   }, [images.length]); // Rerun effect if the images array changes
 
   return (
-    <div className='project-screenshot-wrapper mr-4 rounded-lg overflow-hidden' style={{ width: '400px', height: 'auto' }}>
-      <img
-        src={images[currentImageIndex]}
-        alt={altText}
-        className='project-screenshot rounded-lg object-cover w-full h-auto'
-      />
+    <div className='flex items-center justify-center h-full'>
+      {images.length > 0 && (
+        <div
+          className='project-screenshot-wrapper rounded-lg overflow-hidden'
+          style={{ width: images.length > 1 ? '400px' : '800px', maxHeight: '80%' }}
+        >
+          <img
+            src={images[currentImageIndex]}
+            alt={altText}
+            className='project-screenshot rounded-lg object-cover'
+            style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+          />
+        </div>
+      )}
     </div>
   );
 };

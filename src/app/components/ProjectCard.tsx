@@ -48,7 +48,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             target='_blank' 
             rel='noopener noreferrer'
           >
-            View Project
+            View
           </a>
         </div>
       </li>

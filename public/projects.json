@@ -28,7 +28,7 @@
       "https://raw.githubusercontent.com/bth-dipt-teaching/pokedex/refs/heads/main/assets/screenshots/light/1.png",
       "https://raw.githubusercontent.com/bth-dipt-teaching/pokedex/refs/heads/main/assets/screenshots/dark/2.png"
     ],
-    "description": "Pokédex application developed with Flutter.\n\nGetting Started:\n\nThis project is a starting point for a Flutter application.\n\nHere are a few resources to get you started if this is your first Flutter project:\n\n- Lab: Write your first Flutter app\n- Cookbook: Useful Flutter samples\n\nFor help getting started with Flutter development, view the online documentation, which offers tutorials, samples, guidance on mobile development, and a full API reference.\n\nFeatures:\n\n- View for Pokémon List\n- View for Pokémon Details\n- Light/Dark Theme",
+    "description": "Pokédex application developed with Flutter.\n\nGetting Started:\n\nThis project is a starting point for a Flutter application.\n\nHere are a few resources to get you started if this is your first Flutter project:\n\n- Lab: Write your first Flutter app\n- Cookbook: Useful Flutter samples\n\n",
     "tags": ["pokemon", "mobile", "application"],
     "url": "https://github.com/bth-dipt-teaching/pokedex",
     "type": "student"

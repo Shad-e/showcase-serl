@@ -10,7 +10,14 @@ const Header = ({ onSearch }) => {
           ShowcaseSERL Projects
         </h1>
       </Link>
-      <SearchBar onSearch={onSearch} />
+      <div className='flex items-center space-x-4'> {/* Flex container for search bar and button */}
+        <SearchBar onSearch={onSearch} />
+        <Link href="/kiosk">
+          <button className='bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded'>
+            Kiosk Mode
+          </button>
+        </Link>
+      </div>
     </header>
   )
 }
