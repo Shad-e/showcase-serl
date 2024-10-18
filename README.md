@@ -5,7 +5,10 @@ ShowcaseSERL is a curated collection of student and researcher- developed projec
 ## Getting Started
 
 First, clone the repository to your local machine:
+
+```bash
 git clone https://github.com/Shad-e/showcase-serl.git
+```
 
 
 Relocate to your folder and install the npm packages required for the application:
