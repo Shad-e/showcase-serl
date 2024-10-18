@@ -10,7 +10,6 @@ First, clone the repository to your local machine, relocate to your folder and i
 npm install
 ```
 
-
 Second, run the development server:
 
 ```bash

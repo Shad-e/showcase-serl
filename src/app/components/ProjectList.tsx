@@ -22,9 +22,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
             />
           </div>
           <p className='mb-2'>{project.description}</p>
-          <p className='mb-2'>
-            Type: {project.type}
-          </p>
+          <p className='mb-2'>Type: {project.type}</p>
           <p className='mb-2'>Tags: {project.tags.join(', ')}</p>
           <a
             href={project.url}

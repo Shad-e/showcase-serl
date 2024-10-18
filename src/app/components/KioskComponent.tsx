@@ -2,32 +2,15 @@
 
 import { useState, useEffect } from 'react'
 import QRCodeDisplay from '../components/QRCodeDisplay'
+import { Project } from '../types'
 
-const Kiosk = () => {
-  const [projects, setProjects] = useState<any[]>([])
+const KioskComponent = ({ projects }: { projects: Project[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/projects.json')
-        if (!response.ok) {
-          throw new Error('Network response was not ok')
-        }
-        const data = await response.json()
-        setProjects(data)
-      } catch (error) {
-        console.error('Error fetching data:', error)
-      }
-    }
-
-    fetchData()
-  }, [])
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length)
-    }, 5000)
+    }, 10000) // Change project every 10 seconds
 
     return () => clearInterval(interval)
   }, [projects])
@@ -38,6 +21,7 @@ const Kiosk = () => {
 
   const project = projects[currentIndex]
 
+  // Function to render description with line breaks
   const renderDescription = (description: string) => {
     return description.split('\n').map((line, index) => (
       <span key={index}>
@@ -47,7 +31,8 @@ const Kiosk = () => {
     ))
   }
 
-  const qrCodeUrl = `${window.location.origin}/${project.id}`
+  // Construct dynamic QR code URL
+  const qrCodeUrl = `${window.location.origin}/${project.id}` // Dynamically construct the URL
 
   return (
     <div className='flex min-h-screen items-center justify-center bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500'>
@@ -72,14 +57,16 @@ const Kiosk = () => {
         </div>
 
         <div className='flex h-full flex-grow flex-col items-start justify-between gap-10 lg:flex-row'>
+          {/* Image Section */}
           <div className='flex h-full w-full items-center justify-center lg:w-1/2'>
             {project.screenshot.length > 0 && (
               <div className='flex h-full items-start justify-center space-x-4'>
+                {/* Flex container to keep images side by side */}
                 {project.screenshot.map((image: string, index: number) => (
                   <img
                     key={index}
                     src={image}
-                    srcSet={`${image} 1x, ${image}?raw=true 2x`}
+                    srcSet={`${image} 1x, ${image}?raw=true 2x`} // Use srcSet for responsive images
                     alt={`Screenshot ${index + 1}`}
                     className='rounded-lg'
                     style={{
@@ -93,6 +80,7 @@ const Kiosk = () => {
               </div>
             )}
           </div>
+          {/* Project Info Section */}
           <div className='flex h-full w-full flex-col overflow-auto text-black lg:w-1/2'>
             <p className='mb-6 text-xl leading-relaxed md:text-2xl'>
               {renderDescription(project.description)}
@@ -100,6 +88,7 @@ const Kiosk = () => {
           </div>
         </div>
 
+        {/* QR Code Section */}
         <div className='absolute bottom-6 right-6'>
           <QRCodeDisplay url={qrCodeUrl} />
         </div>
@@ -108,4 +97,4 @@ const Kiosk = () => {
   )
 }
 
-export default Kiosk
+export default KioskComponent

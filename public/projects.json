@@ -39,9 +39,53 @@
     "screenshot": [
       "https://raw.githubusercontent.com/exo-explore/exo/main/docs/exo-logo-black-bg.jpg"
     ],
-    "description": "Run your own AI cluster at home with everyday devices.",
+    "description": "Run your own AI cluster at home with everyday devices. Forget expensive NVIDIA GPUs, unify your existing devices into one powerful GPU: iPhone, iPad, Android, Mac, Linux, pretty much any device!",
     "tags": ["ai", "mobile", "application"],
     "url": "https://github.com/exo-explore/exo",
+    "type": "research"
+  },
+  {
+    "id": 5,
+    "title": "Wynntils",
+    "screenshot": [
+      "https://camo.githubusercontent.com/ae8e6c92de05336bedf82f3ad0f0e759b23cbc90a2f84dfcf9b752194bef5626/687474703a2f2f63646e2e77796e6e74696c732e636f6d2f77796e6e74696c732532306c6f676f2532302d253230772532307061696e747374726f6b652e706e67"
+    ],
+    "description": "Wynntils is a Wynncraft mod that seeks to enhance the user's gameplay with a variety of customizable options and additions. Wynntils is based on Minecraft 1.21 using Architectury, and supports Fabric and NeoForge. This repository contains a rewrite (originally codenamed Artemis) of the original Wynntils mod, now known as Wynntils Legacy .",
+    "tags": ["minecraft", "game", "mod"],
+    "url": "https://github.com/Wynntils/Wynntils",
+    "type": "research"
+  },
+  {
+    "id": 6,
+    "title": "WowUp",
+    "screenshot": [
+      "https://camo.githubusercontent.com/7d69cdfb21b20e7cf37b14235aafe8211532ad77e886d85fc4c7218dd15c35df/68747470733a2f2f63646e2e776f7775702e696f2f736974652f6173736574732f69636f6e732f616e64726f69642d6368726f6d652d353132783531322e706e67"
+    ],
+    "description": "WowUp is the community-centered World of Warcraft addon updater. We attempt to bring the addon community together in an easy-to-use updater application. We have an ever-growing list of supported features.\n\n- Support for all major addon sources\n- Discover or find new addons across addon sources\n- Handle all your different World of Warcraft clients\n- Auto updates",
+    "tags": ["wow", "addons", "game"],
+    "url": "https://github.com/WowUp/WowUp",
+    "type": "research"
+  },
+  {
+    "id": 7,
+    "title": "Deepface",
+    "screenshot": [
+      "https://raw.githubusercontent.com/serengil/deepface/master/icon/deepface-icon-labeled.png"
+    ],
+    "description": "DeepFace is a lightweight face recognition and facial attribute analysis (age, gender, emotion and race) framework for python. It is a hybrid face recognition framework wrapping state-of-the-art models: VGG-Face, FaceNet, OpenFace, DeepFace, DeepID, ArcFace, Dlib, SFace and GhostFaceNet.\n Experiments show that human beings have 97.53% accuracy on facial recognition tasks whereas those models already reached and passed that accuracy level.",
+    "tags": ["ai", "recognition", "analyze"],
+    "url": "https://github.com/serengil/deepface",
+    "type": "research"
+  },
+  {
+    "id": 8,
+    "title": "Fooocus",
+    "screenshot": [
+      "https://private-user-images.githubusercontent.com/19834515/278888447-483fb86d-c9a2-4c20-997c-46dafc124f25.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkwODE0NjUsIm5iZiI6MTcyOTA4MTE2NSwicGF0aCI6Ii8xOTgzNDUxNS8yNzg4ODg0NDctNDgzZmI4NmQtYzlhMi00YzIwLTk5N2MtNDZkYWZjMTI0ZjI1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDE2VDEyMTkyNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU5MjEzZWQ2ODE5NjViNzUxZjRkZjAzZTQ3MDY2NWYzOTI3MDEzYmJiNDU4YzNlNGQwNWRhOTVmZWU4MmYwMTcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.18kE_DnFZIQtZhM8T5jDd4Y3EfgXxa9WnY2v2UwuVUE"
+    ],
+    "description": "Fooocus is an image generating software (based on Gradio).\n Fooocus is a rethinking of Stable Diffusion and Midjourney’s designs: \n \n- Learned from Stable Diffusion, the software is offline, open source, and free. \n \n- Learned from Midjourney, the manual tweaking is not needed, and users only need to focus on the prompts and images. \n\n Fooocus has included and automated lots of inner optimizations and quality improvements. Users can forget all those difficult technical parameters, and just enjoy the interaction between human and computer to explore new mediums of thought and expanding the imaginative powers of the human species.",
+    "tags": ["ai", "generator", "image"],
+    "url": "https://github.com/kdjayakody/Fooocus-AI-Image-Generator",
     "type": "research"
   }
 ]

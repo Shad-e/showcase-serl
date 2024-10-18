@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import Header from './components/Header' // Import the Header component
-import SearchBar from './components/SearchBar'
 import { Project } from './types'
 import ProjectCard from './components/ProjectCard' // Import the ProjectCard
 
@@ -53,8 +52,8 @@ export default function Home() {
 
   return (
     <div className='min-h-screen p-8'>
-      <Header onSearch={handleSearch} /> {/* Use the imported Header component */}
-
+      <Header onSearch={handleSearch} />{' '}
+      {/* Use the imported Header component */}
       {loading ? (
         <div className='flex h-64 items-center justify-center'>
           <div className='loader mb-4 h-12 w-12 rounded-full border-4 border-t-4 border-gray-200 ease-linear'></div>
@@ -70,7 +69,7 @@ export default function Home() {
           {filteredProjects.length === 0 ? (
             <p>No projects available.</p>
           ) : (
-            <ul className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+            <ul className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
               {filteredProjects.map((project, index) => (
                 <ProjectCard key={index} project={project} />
               ))}
