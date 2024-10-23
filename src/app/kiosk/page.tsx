@@ -72,25 +72,25 @@ const Kiosk = () => {
         </div>
 
         <div className='flex h-full flex-grow flex-col items-start justify-between gap-10 lg:flex-row'>
-          <div className='flex h-full w-full items-center justify-center lg:w-1/2'>
-            {project.screenshot.length > 0 && (
-              <div className='flex h-full items-start justify-center space-x-4'>
-                {project.screenshot.map((image: string, index: number) => (
-                  <img
-                    key={index}
-                    src={image}
-                    srcSet={`${image} 1x, ${image}?raw=true 2x`}
-                    alt={`Screenshot ${index + 1}`}
-                    className='rounded-lg'
-                    style={{
-                      width: project.screenshot.length > 1 ? '400px' : '800px',
-                      height: project.screenshot.length > 1 ? 'auto' : '400px',
-                      maxHeight: '80%',
-                      objectFit: 'contain',
-                    }}
-                  />
-                ))}
-              </div>
+  <div className='flex h-full w-full items-center justify-center lg:w-1/2'>
+    {project.screenshot.length > 0 && (
+      <div className={`flex h-full items-start justify-center ${project.screenshot.length > 1 ? 'space-x-2' : 'space-x-4'}`}>
+        {project.screenshot.map((image: string, index: number) => (
+          <img
+            key={index}
+            src={image}
+            srcSet={`${image} 1x, ${image}?raw=true 2x`}
+            alt={`Screenshot ${index + 1}`}
+            className='rounded-lg'
+            style={{
+              width: project.screenshot.length > 1 ? '400px' : '800px',
+              height: project.screenshot.length > 1 ? 'auto' : '400px',
+              maxHeight: '80%',
+              objectFit: 'contain',
+            }}
+          />
+        ))}
+      </div>
             )}
           </div>
           <div className='flex h-full w-full flex-col overflow-auto text-black lg:w-1/2'>
