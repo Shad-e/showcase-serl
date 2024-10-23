@@ -16,8 +16,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link href={`/${project.id}`} passHref>
       <li className='h-100 flex cursor-pointer items-start rounded-lg border p-4 shadow-md transition-shadow duration-200 hover:shadow-lg'>
-        {' '}
-        {/* Set a fixed card height */}
         <div className='project-screenshot-wrapper mr-4 flex flex-col'>
           {/* Display only the first image in the screenshots array */}
           {project.screenshot.length > 0 && (
@@ -26,8 +24,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               alt={`${project.title} screenshot`}
               className='project-screenshot mb-2'
               width={200}
-              height={150}
-              style={{ objectFit: 'cover' }} // Maintain aspect ratio and cover
+              height={300} // Adjusted height to match the width ratio (200px)
+              style={{ objectFit: 'cover' }} // Ensures the image covers without stretching
             />
           )}
         </div>
@@ -49,14 +47,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               </span>
             ))}
           </div>
-          <a
-            href={project.url}
-            className='mt-4 inline-block rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-500'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            View
-          </a>
         </div>
       </li>
     </Link>
