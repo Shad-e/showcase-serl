@@ -65,27 +65,5 @@
     "tags": ["wow", "addons", "game"],
     "url": "https://github.com/WowUp/WowUp",
     "type": "research"
-  },
-  {
-    "id": 7,
-    "title": "Deepface",
-    "screenshot": [
-      "https://raw.githubusercontent.com/serengil/deepface/master/icon/deepface-icon-labeled.png"
-    ],
-    "description": "DeepFace is a lightweight face recognition and facial attribute analysis (age, gender, emotion and race) framework for python. It is a hybrid face recognition framework wrapping state-of-the-art models: VGG-Face, FaceNet, OpenFace, DeepFace, DeepID, ArcFace, Dlib, SFace and GhostFaceNet.\n Experiments show that human beings have 97.53% accuracy on facial recognition tasks whereas those models already reached and passed that accuracy level.",
-    "tags": ["ai", "recognition", "analyze"],
-    "url": "https://github.com/serengil/deepface",
-    "type": "research"
-  },
-  {
-    "id": 8,
-    "title": "Screenpipe",
-    "screenshot": [
-      "https://private-user-images.githubusercontent.com/25003283/357953213-d3b1de26-c3c0-4c84-b9c4-b03213b97a30.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjk3MTUxMTYsIm5iZiI6MTcyOTcxNDgxNiwicGF0aCI6Ii8yNTAwMzI4My8zNTc5NTMyMTMtZDNiMWRlMjYtYzNjMC00Yzg0LWI5YzQtYjAzMjEzYjk3YTMwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDIzVDIwMjAxNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWI3Y2UyZmE0MzU4MzU5MmY2Mjg4NjZmZjdkYjdhMTI4ZmZkZDlmNzY5YzE4NTMzZjYyOTlmYjU2ODk5YmI4OGMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.yixx6aFITPASUT8DuNn_pl9-fpad5eEJhZWL9jypMSg"
-    ],
-    "description": "Library to build personalized AI powered by what you've seen, said, or heard. works with Ollama. alternative to Rewind.ai. open. secure. you own your data. rust. \n\n We are shipping daily, make suggestions, post bugs, give feedback.\n\n Why? \n\n Super intelligence + activity data from your life and your team = magic. \n\n AI is progressing so fast that it will be able to ingest months of recordings of your life and business by next year, and we're building the foundations to make it happen. \n\n Start recording your screen today ... or be left behind", 
-    "tags": ["ai", "library", "audio"],
-    "url": "https://github.com/mediar-ai/screenpipe?tab=readme-ov-file",
-    "type": "research"
   }
 ]
